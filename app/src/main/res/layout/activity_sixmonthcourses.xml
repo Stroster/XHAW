@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="900dp"
+    android:background="#06141B"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#06141B"
+        tools:context=".sixmonthcourses">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="106dp"
+            android:layout_height="93dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/whatsapp_image_2024_09_15_at_01_16_04_030a1a51"
+            android:contentDescription="@string/imageView"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="162dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="227dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="170dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/View"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="216dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="520dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/Views"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="97dp"
+            android:layout_height="137dp"
+            android:layout_marginBottom="356dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:srcCompat="@drawable/__3_png"
+            android:contentDescription="@string/sewing"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="209dp"
+            android:layout_height="136dp"
+            android:layout_marginBottom="356dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/sewing"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView5" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="116dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/__5_png"
+            android:contentDescription="@string/Lifeskills"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="206dp"
+            android:layout_height="123dp"
+            android:layout_marginBottom="200dp"
+            android:text="@string/Lifeskills"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="97dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:srcCompat="@drawable/stockcake_landscaping_urban_greenery_1726614363"
+            android:contentDescription="@string/landscaping"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="212dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/landscaping"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="92dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="516dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/__1_png"
+            android:contentDescription="@string/Firstaid"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
