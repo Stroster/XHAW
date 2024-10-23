@@ -13,7 +13,7 @@ class Mainscreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_mainscreen)
 
-
+        val contact = findViewById<Button>(R.id.button22)
         val sixmonthcoursesbutton = findViewById<Button>(R.id.button2)
 
         sixmonthcoursesbutton.setOnClickListener{
@@ -26,6 +26,11 @@ class Mainscreen : AppCompatActivity() {
 
         sixweekcoursesbutton.setOnClickListener{
             val intent = Intent(this, sixweekcourses::class.java)
+            startActivity(intent)
+        }
+
+        contact.setOnClickListener {
+            val intent = Intent(this@Mainscreen, ContactDetails::class.java)
             startActivity(intent)
         }
     }

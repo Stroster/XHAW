@@ -9,33 +9,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Cooking : AppCompatActivity() {
+class Course_enrollment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_cooking)
+        setContentView(R.layout.activity_course_enrollment)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val logo = findViewById<ImageView>(R.id.imageView21)
-        val back = findViewById<Button>(R.id.button13)
-        val next = findViewById<Button>(R.id.button14)
+        val logo = findViewById<ImageView>(R.id.imageView25)
 
         logo.setOnClickListener {
-            val intent = Intent(this@Cooking, Mainscreen::class.java)
-            startActivity(intent)
-        }
-
-        back.setOnClickListener {
-            val intent = Intent(this@Cooking, sixweekcourses::class.java)
-            startActivity(intent)
-        }
-
-        next.setOnClickListener {
-            val intent = Intent(this@Cooking, Garden_maintenance::class.java)
+            val intent = Intent(this@Course_enrollment, Mainscreen::class.java)
             startActivity(intent)
         }
     }

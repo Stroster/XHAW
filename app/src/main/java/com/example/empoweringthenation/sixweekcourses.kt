@@ -22,7 +22,9 @@ class sixweekcourses : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        val child = findViewById<ImageView>(R.id.childmindingImage)
+        val garden = findViewById<ImageView>(R.id.gardeningImage)
+        val cook = findViewById<ImageView>(R.id.cookingImage)
         val index = arrayOf("Home", "Six month Courses", "Six week courses")
 
         val menu = findViewById<Spinner>(R.id.spinner2)
@@ -53,9 +55,24 @@ class sixweekcourses : AppCompatActivity() {
             }
         }
 
-        val logo = findViewById<ImageView>(R.id.imageView2)
+        val logo = findViewById<ImageView>(R.id.logo)
         logo.setOnClickListener {
             val intent = Intent(this@sixweekcourses, Mainscreen::class.java)
+            startActivity(intent)
+        }
+
+        child.setOnClickListener {
+            val intent = Intent(this@sixweekcourses, Childminding::class.java)
+            startActivity(intent)
+        }
+
+        garden.setOnClickListener {
+            val intent = Intent(this@sixweekcourses, Garden_maintenance::class.java)
+            startActivity(intent)
+        }
+
+        cook.setOnClickListener {
+            val intent = Intent(this@sixweekcourses, Cooking::class.java)
             startActivity(intent)
         }
     }

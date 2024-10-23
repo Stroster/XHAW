@@ -17,6 +17,10 @@ class sixmonthcourses : AppCompatActivity() {
         setContentView(R.layout.activity_sixmonthcourses)
 
         val index = arrayOf("Home", "Six month Courses", "Six week courses")
+        val first = findViewById<ImageView>(R.id.imageView5)
+        val sewing = findViewById<ImageView>(R.id.imageView6)
+        val life = findViewById<ImageView>(R.id.imageView7)
+        val land = findViewById<ImageView>(R.id.imageView8)
 
         val menu = findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,index)
@@ -50,6 +54,26 @@ class sixmonthcourses : AppCompatActivity() {
         val logo = findViewById<ImageView>(R.id.imageView3)
         logo.setOnClickListener {
             val intent = Intent(this@sixmonthcourses, Mainscreen::class.java)
+            startActivity(intent)
+        }
+
+        first.setOnClickListener {
+            val intent = Intent(this@sixmonthcourses, Firstaid::class.java)
+            startActivity(intent)
+        }
+
+        sewing.setOnClickListener {
+            val intent = Intent(this@sixmonthcourses, Sewing::class.java)
+            startActivity(intent)
+        }
+
+        life.setOnClickListener {
+            val intent = Intent(this@sixmonthcourses, LifeSkills::class.java)
+            startActivity(intent)
+        }
+
+        land.setOnClickListener {
+            val intent = Intent(this@sixmonthcourses, Landscaping::class.java)
             startActivity(intent)
         }
     }

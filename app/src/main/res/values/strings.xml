@@ -4,6 +4,7 @@
 </string>
     <string name="textView">Courses Available</string>
     <string name="imageView">Logo</string>
+    <string name="Title">Title</string>
     <string name="View">Six Month Courses</string>
     <string name="sixweeks">Six Week Courses</string>
     <string name="Views">First Aid -Fees: R1500
@@ -33,41 +34,104 @@ Fees: R750
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="sixmonth_firstaid">Six Month Course - First Aid</string>
+    <string name="aid">Fees: R1500
+Purpose: To provide first aid awareness and basic life support
+Content:
 
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+-Wounds and bleeding
+-Burns and fractures
+-Emergency scene management
+-Cardio-Pulmonary Resuscitation (CPR)
+-Respiratory distress e.g., Choking, blocked airway </string>
+    <string name="sixmonth_sewing">Six month course - Sewing </string>
+    <string name="sewing1">Fees: R1500
+Purpose: To provide alterations and new garment tailoring services
+Content:
+
+• Types of stitches
+• Threading a sewing machine
+• Sewing buttons, zips, hems and seams
+• Alterations
+• Designing and sewing new garments</string>
+
+    <string name="Back">Back</string>
+    <string name="Next">Next Course</string>
+    <string name="sixlandscaping">Six Month Course - Landscaping</string>
+    <string name="landscaping1">Fees: R1500
+Purpose: To provide landscaping services for new and established gardens
+        Content:
+
+• Indigenous and exotic plants and trees
+• Fixed structures (fountains, statues, benches, tables, built-in braai)
+• Balancing of plants and trees in a garden
+• Aesthetics of plant shapes and colours
+• Garden layout
     </string>
+    <string name="SixmonthLife">Six Month Course - Life Skills</string>
+    <string name="Lifeskills1">Life Skills
+
+Fees: R1500
+Purpose: To provide skills to navigate basic life necessities
+Content:
+
+• Opening a bank account
+• Basic labour law (know your rights)
+• Basic reading and writing literacy
+• Basic numeric literacy </string>
+    <string name="Enroll">Enroll</string>
+    <string name="sixWeekChild">Six Week Short Course  Child Minding</string>
+    <string name="childminding1">Fees: R750
+Purpose: To provide basic child and baby care
+Content:
+
+• birth to six-month old baby needs
+• seven-month to one year old needs
+• Toddler needs
+• Educational toys</string>
+    <string name="SixweekCooking">Six Week Short Course Cooking</string>
+    <string name="Cooking1">Fees: R750
+Purpose: To prepare and cook nutritious family meals
+Content:
+
+• Nutritional requirements for a healthy body
+• Types of protein, carbohydrates and vegetables
+• Planning meals
+• Preparation and cooking of meals </string>
+    <string name="SixweekGardening">Six Week Short Course Gardening Maintenance</string>
+    <string name="Gardening1">Fees: R750
+Purpose: To provide basic knowledge of watering, pruning and planting in a domestic garden.
+Content:
+
+• Water restrictions and the watering requirements of indigenous and exotic plants
+• Pruning and propagation of plants
+• Planting techniques for different plant types</string>
+    <string name="Courses_Registration">Course Registration</string>
+    <string name="name">Name and Surname</string>
+    <string name="Phone">Phone Number</string>
+    <string name="email">Email Address</string>
+    <string name="Adress">Adress</string>
+    <string name="Course_Selection">Course Selection</string>
+    <string name="courses">Courses</string>
+    <string name="Price">Price</string>
+    <string name="FirstAid1">First Aid</string>
+    <string name="Sewing1">Sewing</string>
+    <string name="Landscaping1">Landscaping</string>
+    <string name="LifeSkills">Life Skills</string>
+    <string name="Childminding1">Child Minding</string>
+    <string name="Cooking2">Cooking</string>
+    <string name="Garden1">Garden Maintenance</string>
+    <string name="Fees">R1500</string>
+    <string name="Fees1">R750</string>
+    <string name="confirm">Confirm</string>
+    <string name="Consultation">Request Consultation</string>
+    <string name="Total">Total Vat included </string>
+    <string name="ContactUs">Contact US</string>
+    <string name="Email">Email: pradebe@gmail.com</string>
+    <string name="Number">Number : 0213005222</string>
+    <string name="Address">Address: Atrium on 5th, 9th Floor, 5th Street, Sandton, Johannesburg, 2196,
+        South Africa
+    </string>
+    <string name="Exit">Exit</string>
+    <string name="Map">Map</string>
 </resources>

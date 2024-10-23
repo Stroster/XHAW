@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="900dp"
     android:background="#06141B"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,10 +89,10 @@
             android:layout_height="124dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="200dp"
+            android:contentDescription="@string/Lifeskills"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/__5_png"
-            android:contentDescription="@string/Lifeskills"/>
+            app:srcCompat="@drawable/life_skills" />
 
         <TextView
             android:id="@+id/textView2"
