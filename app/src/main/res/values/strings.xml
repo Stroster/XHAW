@@ -113,6 +113,7 @@ Content:
     <string name="Adress">Address</string>
     <string name="Course_Selection">Course Selection</string>
     <string name="courses">Courses</string>
+    <string name="Course_selected">Courses Selected</string>
     <string name="Price">Price</string>
     <string name="FirstAid1">First Aid</string>
     <string name="Sewing1">Sewing</string>
@@ -122,10 +123,12 @@ Content:
     <string name="Cooking2">Cooking</string>
     <string name="Garden1">Garden Maintenance</string>
     <string name="Fees">R1500</string>
+    <string name="place">No courses selected.</string>
     <string name="Fees1">R750</string>
     <string name="confirm">Confirm</string>
     <string name="Consultation">Request Consultation</string>
     <string name="Total">Total Vat included </string>
+    <string name="Total_amount">Total Price: R0.00</string>
     <string name="ContactUs">Contact US</string>
     <string name="Email">Email: pradebe@gmail.com</string>
     <string name="Number">Number : 0213005222</string>

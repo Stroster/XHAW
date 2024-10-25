@@ -68,19 +68,19 @@
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button12" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/Next"
         app:layout_constraintBottom_toBottomOf="parent"

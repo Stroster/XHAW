@@ -69,12 +69,12 @@
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="190dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button16" />
 
     <Button
         android:id="@+id/button16"
