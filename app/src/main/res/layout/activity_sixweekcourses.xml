@@ -19,10 +19,11 @@
             android:layout_width="143dp"
             android:layout_height="105dp"
             android:layout_marginStart="5dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/whatsapp_image_2024_09_15_at_01_16_04_030a1a51"
-            android:contentDescription="@string/imageView" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/whatsapp_image_2024_09_15_at_01_16_04_030a1a51" />
 
         <Spinner
             android:id="@+id/spinner2"
@@ -99,8 +100,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gardeningText"
-            app:srcCompat="@drawable/__4_png"
-            android:contentDescription="@string/cooking" />
+            app:srcCompat="@drawable/__4_png" />
 
         <TextView
             android:id="@+id/cookingText"
@@ -110,19 +110,8 @@
             android:text="@string/cooking"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cookingImage" />
-
-        <Button
-            android:id="@+id/button21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginBottom="50dp"
-            android:backgroundTint="#4A5C6A"
-            android:text="@string/Back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

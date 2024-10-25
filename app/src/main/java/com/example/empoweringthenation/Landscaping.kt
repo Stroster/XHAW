@@ -34,7 +34,7 @@ class Landscaping : AppCompatActivity() {
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Landscaping, Course_enrollment::class.java)
+            val intent = Intent(this@Landscaping, CourseEnrollment::class.java)
             startActivity(intent)
         }
     }

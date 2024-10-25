@@ -110,7 +110,7 @@ Content:
     <string name="name">Name and Surname</string>
     <string name="Phone">Phone Number</string>
     <string name="email">Email Address</string>
-    <string name="Adress">Adress</string>
+    <string name="Adress">Address</string>
     <string name="Course_Selection">Course Selection</string>
     <string name="courses">Courses</string>
     <string name="Price">Price</string>
@@ -134,4 +134,5 @@ Content:
     </string>
     <string name="Exit">Exit</string>
     <string name="Map">Map</string>
+    <string name="Logo">Logo</string>
 </resources>

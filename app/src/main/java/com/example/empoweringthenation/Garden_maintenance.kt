@@ -22,7 +22,7 @@ class Garden_maintenance : AppCompatActivity() {
 
         val logo = findViewById<ImageView>(R.id.imageView23)
         val back = findViewById<Button>(R.id.button15)
-        val enroll = findViewById<Button>(R.id.button16)
+        val next = findViewById<Button>(R.id.button16)
 
         logo.setOnClickListener {
             val intent = Intent(this@Garden_maintenance, Mainscreen::class.java)
@@ -34,8 +34,8 @@ class Garden_maintenance : AppCompatActivity() {
             startActivity(intent)
         }
 
-        enroll.setOnClickListener {
-            val intent = Intent(this@Garden_maintenance, Course_enrollment::class.java)
+        next.setOnClickListener {
+            val intent = Intent(this@Garden_maintenance, Cooking::class.java)
             startActivity(intent)
         }
     }

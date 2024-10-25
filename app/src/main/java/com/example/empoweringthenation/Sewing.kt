@@ -34,7 +34,7 @@ class Sewing : AppCompatActivity() {
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Sewing, Landscaping::class.java)
+            val intent = Intent(this@Sewing, LifeSkills::class.java)
             startActivity(intent)
         }
 

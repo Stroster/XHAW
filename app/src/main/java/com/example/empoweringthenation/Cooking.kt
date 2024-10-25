@@ -22,7 +22,7 @@ class Cooking : AppCompatActivity() {
 
         val logo = findViewById<ImageView>(R.id.imageView21)
         val back = findViewById<Button>(R.id.button13)
-        val next = findViewById<Button>(R.id.button14)
+        val enroll = findViewById<Button>(R.id.button14)
 
         logo.setOnClickListener {
             val intent = Intent(this@Cooking, Mainscreen::class.java)
@@ -34,8 +34,8 @@ class Cooking : AppCompatActivity() {
             startActivity(intent)
         }
 
-        next.setOnClickListener {
-            val intent = Intent(this@Cooking, Garden_maintenance::class.java)
+        enroll.setOnClickListener {
+            val intent = Intent(this@Cooking, CourseEnrollment::class.java)
             startActivity(intent)
         }
     }

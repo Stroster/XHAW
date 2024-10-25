@@ -35,7 +35,7 @@ class Childminding : AppCompatActivity() {
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Childminding, Cooking::class.java)
+            val intent = Intent(this@Childminding, Garden_maintenance::class.java)
             startActivity(intent)
         }
     }

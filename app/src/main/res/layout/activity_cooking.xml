@@ -70,7 +70,7 @@
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
+        android:layout_marginStart="200dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/Back"
@@ -84,7 +84,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#4A5C6A"
-        android:text="@string/Next"
+        android:text="@string/Enroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

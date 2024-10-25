@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#06141B"
-    tools:context=".Course_enrollment">
+    tools:context=".CourseEnrollment">
 
     <ImageView
         android:id="@+id/imageView25"
@@ -14,6 +20,7 @@
         android:layout_height="79dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/Logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/whatsapp_image_2024_09_15_at_01_16_04_030a1a51" />
@@ -52,10 +59,11 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:fontFamily="@font/poppins_medium"
-            android:hint="hint"
+            android:hint="@string/name"
             android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,6 +77,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -86,6 +95,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email" />
@@ -101,6 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Address"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:hint="@string/Adress"
@@ -125,7 +136,7 @@
         android:id="@+id/textView27"
         android:layout_width="83dp"
         android:layout_height="29dp"
-        android:layout_marginEnd="104dp"
+        android:layout_marginEnd="105dp"
         android:layout_marginBottom="330dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Price"
@@ -138,7 +149,7 @@
         android:id="@+id/textView38"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="215dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees"
@@ -150,7 +161,7 @@
         android:id="@+id/textView40"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="155dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees1"
@@ -174,7 +185,7 @@
         android:id="@+id/textView36"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="270dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees"
@@ -206,7 +217,7 @@
         android:id="@+id/textView39"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="185dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees1"
@@ -239,7 +250,7 @@
         android:id="@+id/textView35"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="300dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees"
@@ -271,7 +282,7 @@
         android:id="@+id/textView37"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="240dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees"
@@ -334,7 +345,7 @@
         android:id="@+id/textView41"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="130dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Fees1"
@@ -387,16 +398,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView28"
-        android:layout_width="139dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/button_onoff_indicator_off" />
-
     <TextView
         android:id="@+id/textView42"
         android:layout_width="140dp"
@@ -404,8 +405,10 @@
         android:layout_marginStart="15dp"
         android:layout_marginBottom="92dp"
         android:text="@string/Total"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
