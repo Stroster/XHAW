@@ -12,67 +12,72 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class sixweekcourses : AppCompatActivity() {
+class SixWeekCourses : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sixweekcourses)
+
+        // Handle edge-to-edge window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Retrieve UI elements
         val child = findViewById<ImageView>(R.id.childmindingImage)
         val garden = findViewById<ImageView>(R.id.gardeningImage)
         val cook = findViewById<ImageView>(R.id.cookingImage)
-        val index = arrayOf("Home", "Six month Courses", "Six week courses")
+        val index = arrayOf("Six month Courses", "Six week courses")
 
         val menu = findViewById<Spinner>(R.id.spinner2)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        menu.adapter
+        menu.adapter = adapter // This line was missing an assignment
 
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when (position) {
+                    0 -> {
+                        // Go to Home screen
+                        val intent = Intent(this@SixWeekCourses, SixMonthCourses::class.java)
+                        startActivity(intent)
+                    }
                     1 -> {
-                        val intent = Intent(this@sixweekcourses, Mainscreen::class.java)
+                        // Go to Six Month Courses screen
+                        val intent = Intent(this@SixWeekCourses, SixWeekCourses::class.java)
                         startActivity(intent)
                     }
-                    2 -> {
-                        val intent = Intent(this@sixweekcourses, sixmonthcourses::class.java)
-                        startActivity(intent)
-                    }
-                    3 -> {
-                        val intent = Intent(this@sixweekcourses, sixweekcourses::class.java)
-                        startActivity(intent)
-                    }
+                    // No need for case 2 since it's already this activity
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+                // Optional: Handle case where no item is selected
             }
         }
 
+        // Logo click to go back to the main screen
         val logo = findViewById<ImageView>(R.id.logo)
         logo.setOnClickListener {
-            val intent = Intent(this@sixweekcourses, Mainscreen::class.java)
+            val intent = Intent(this@SixWeekCourses, Mainscreen::class.java)
             startActivity(intent)
         }
 
+        // Course image click listeners
         child.setOnClickListener {
-            val intent = Intent(this@sixweekcourses, Childminding::class.java)
+            val intent = Intent(this@SixWeekCourses, Childminding::class.java)
             startActivity(intent)
         }
 
         garden.setOnClickListener {
-            val intent = Intent(this@sixweekcourses, Garden_maintenance::class.java)
+            val intent = Intent(this@SixWeekCourses, Garden_maintenance::class.java)
             startActivity(intent)
         }
 
         cook.setOnClickListener {
-            val intent = Intent(this@sixweekcourses, Cooking::class.java)
+            val intent = Intent(this@SixWeekCourses, Cooking::class.java)
             startActivity(intent)
         }
     }

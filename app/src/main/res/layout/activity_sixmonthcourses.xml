@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#06141B"
-        tools:context=".sixmonthcourses">
+        tools:context=".SixMonthCourses">
 
         <ImageView
             android:id="@+id/imageView3"

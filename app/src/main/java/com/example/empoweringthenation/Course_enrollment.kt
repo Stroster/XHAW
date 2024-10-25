@@ -2,10 +2,15 @@ package com.example.empoweringthenation
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,10 +19,10 @@ import com.google.android.material.textfield.TextInputEditText
 
 class CourseEnrollment : AppCompatActivity() {
 
-    // Declare total and course prices
     private var total: Double = 0.0
     private val course1Price = 1500.00
-    private val course2Price = 1500.00
+    private val course2Price = 750.00
+    private val selectedCourses = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +41,9 @@ class CourseEnrollment : AppCompatActivity() {
         val phoneInput = findViewById<TextInputEditText>(R.id.Number)
         val emailInput = findViewById<TextInputEditText>(R.id.Email)
         val addressInput = findViewById<TextInputEditText>(R.id.Address)
+        val confirm = findViewById<Button>(R.id.button17)
+        val logo = findViewById<ImageView>(R.id.imageView25)
+        val price: TextView = findViewById(R.id.textView42)
 
         val checkBox1 = findViewById<CheckBox>(R.id.checkBox1)
         val checkBox2 = findViewById<CheckBox>(R.id.checkBox2)
@@ -45,9 +53,25 @@ class CourseEnrollment : AppCompatActivity() {
         val checkBox6 = findViewById<CheckBox>(R.id.checkBox6)
         val checkBox7 = findViewById<CheckBox>(R.id.checkBox7)
 
-        val confirm = findViewById<Button>(R.id.button17)
-        val logo = findViewById<ImageView>(R.id.imageView25)
-        val price: TextView = findViewById(R.id.textView42)
+        val menu = findViewById<Spinner>(R.id.spinner10)
+
+        // Initialize and set up the dropdown menu (Spinner)
+        val index = arrayOf("Home", "Six month Courses", "Six week courses")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        menu.adapter = adapter
+
+        menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
+                    0 -> startActivity(Intent(this@CourseEnrollment, Mainscreen::class.java))
+                    1 -> startActivity(Intent(this@CourseEnrollment, SixMonthCourses::class.java))
+                    2 -> startActivity(Intent(this@CourseEnrollment, SixWeekCourses::class.java))
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
 
         // Set logo click listener to go back to the main screen
         logo.setOnClickListener {
@@ -55,87 +79,66 @@ class CourseEnrollment : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Checkbox listeners to update the total price
-        checkBox1.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course1Price
-            } else {
-                total -= course1Price
+        // Checkbox listeners to update the total price and selected courses
+        fun updateCheckbox(checkBox: CheckBox, coursePrice: Double, courseName: String) {
+            checkBox.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    total += coursePrice
+                    selectedCourses.add(courseName)
+                } else {
+                    total -= coursePrice
+                    selectedCourses.remove(courseName)
+                }
+                updateTotalWithVat(price)
             }
-            updateTotalWithVat(price)
         }
 
-        checkBox2.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course1Price
-            } else {
-                total -= course1Price
-            }
-            updateTotalWithVat(price)
-        }
-
-        checkBox3.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course1Price
-            } else {
-                total -= course1Price
-            }
-            updateTotalWithVat(price)
-        }
-
-        checkBox4.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course1Price
-            } else {
-                total -= course1Price
-            }
-            updateTotalWithVat(price)
-        }
-
-        checkBox5.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course2Price
-            } else {
-                total -= course2Price
-            }
-            updateTotalWithVat(price)
-        }
-
-        checkBox6.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course2Price
-            } else {
-                total -= course2Price
-            }
-            updateTotalWithVat(price)
-        }
-
-        checkBox7.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                total += course2Price
-            } else {
-                total -= course2Price
-            }
-            updateTotalWithVat(price)
-        }
+        updateCheckbox(checkBox1, course1Price, "First Aid")
+        updateCheckbox(checkBox2, course1Price, "Sewing")
+        updateCheckbox(checkBox3, course1Price, "Landscaping")
+        updateCheckbox(checkBox4, course1Price, "Life Skills")
+        updateCheckbox(checkBox5, course2Price, "Childminding")
+        updateCheckbox(checkBox6, course2Price, "Cooking")
+        updateCheckbox(checkBox7, course2Price, "Garden Maintenance")
 
         // Confirm button listener to pass data to the next activity
         confirm.setOnClickListener {
-            val intent = Intent(this@CourseEnrollment, ViewDetailsActivity::class.java)
+            val name = nameInput.text.toString().trim()
+            val phone = phoneInput.text.toString().trim()
+            val email = emailInput.text.toString().trim()
+            val address = addressInput.text.toString().trim()
 
-            // Retrieve user input data
-            val name = nameInput.text.toString()
-            val phone = phoneInput.text.toString()
-            val email = emailInput.text.toString()
-            val address = addressInput.text.toString()
+            if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || address.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.PHONE.matcher(phone).matches()) {
+                Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (total == 0.0) {
+                Toast.makeText(this, "Please select at least one course", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Calculate total with VAT
             val totalWithVAT = total + (total * 0.15)
 
             // Pass data to the next activity
+            val intent = Intent(this@CourseEnrollment, ViewDetailsActivity::class.java)
             intent.putExtra("name", name)
             intent.putExtra("phone", phone)
             intent.putExtra("email", email)
             intent.putExtra("address", address)
             intent.putExtra("totalPrice", totalWithVAT)
+            intent.putStringArrayListExtra("selectedCourses", selectedCourses)
 
             startActivity(intent)
         }

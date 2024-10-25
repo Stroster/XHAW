@@ -17,7 +17,7 @@ class Mainscreen : AppCompatActivity() {
         val sixmonthcoursesbutton = findViewById<Button>(R.id.button2)
 
         sixmonthcoursesbutton.setOnClickListener{
-            val intent = Intent(this, sixmonthcourses::class.java)
+            val intent = Intent(this, SixMonthCourses::class.java)
             startActivity(intent)
         }
 
@@ -25,7 +25,7 @@ class Mainscreen : AppCompatActivity() {
         val sixweekcoursesbutton = findViewById<Button>(R.id.button)
 
         sixweekcoursesbutton.setOnClickListener{
-            val intent = Intent(this, sixweekcourses::class.java)
+            val intent = Intent(this, SixWeekCourses::class.java)
             startActivity(intent)
         }
 
