@@ -16,9 +16,6 @@
             android:name=".ViewDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".garden_maintenance"
-            android:exported="false" />
-        <activity
             android:name=".ContactDetails"
             android:exported="false" />
         <activity
@@ -53,9 +50,7 @@
         <activity
             android:name=".sixmonthcourses"
             android:exported="false" />
-        <activity
-            android:name=".Sixmonthcourses"
-            android:exported="false" />
+
         <activity
             android:name=".Mainscreen"
             android:exported="false" />
