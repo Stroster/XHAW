@@ -14,6 +14,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Sewing : AppCompatActivity() {
+    private var isFirstSelection = true // Flag to prevent initial selection trigger
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,14 +25,14 @@ class Sewing : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val back = findViewById<Button>(R.id.button5)
         val logo = findViewById<ImageView>(R.id.imageView12)
         val next = findViewById<Button>(R.id.button6)
         val menu = findViewById<Spinner>(R.id.spinner4)
 
         // Initialize and set up the dropdown menu (Spinner)
-        val index = arrayOf("Home", "Six month Courses", "Six week courses", "First Aid", "Landscape",
-            "LifeSkills")
+        val index = arrayOf("Home", "Six month Courses", "Six week courses", "First Aid", "Landscaping", "Life Skills")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         menu.adapter = adapter
@@ -38,13 +40,35 @@ class Sewing : AppCompatActivity() {
         // Set listener for item selection on Spinner
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> startActivity(Intent(this@Sewing, Mainscreen::class.java))
-                    1 -> startActivity(Intent(this@Sewing, SixMonthCourses::class.java))
-                    2 -> startActivity(Intent(this@Sewing, SixWeekCourses::class.java))
-                    3 -> startActivity(Intent(this@Sewing, Firstaid::class.java))
-                    4 -> startActivity(Intent(this@Sewing, Landscaping::class.java))
-                    5 -> startActivity(Intent(this@Sewing, LifeSkills::class.java))
+                if (isFirstSelection) {
+                    isFirstSelection = false // Prevent action on the first selection
+                } else {
+                    when (position) {
+                        0 -> {
+                            startActivity(Intent(this@Sewing, Mainscreen::class.java))
+                            finish() // Finish current activity
+                        }
+                        1 -> {
+                            startActivity(Intent(this@Sewing, SixMonthCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                        2 -> {
+                            startActivity(Intent(this@Sewing, SixWeekCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                        3 -> {
+                            startActivity(Intent(this@Sewing, Firstaid::class.java))
+                            finish() // Finish current activity
+                        }
+                        4 -> {
+                            startActivity(Intent(this@Sewing, Landscaping::class.java))
+                            finish() // Finish current activity
+                        }
+                        5 -> {
+                            startActivity(Intent(this@Sewing, LifeSkills::class.java))
+                            finish() // Finish current activity
+                        }
+                    }
                 }
             }
 
@@ -54,19 +78,18 @@ class Sewing : AppCompatActivity() {
         }
 
         logo.setOnClickListener {
-            val intent = Intent(this@Sewing, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Sewing, Mainscreen::class.java))
+            finish() // Finish current activity
         }
 
         back.setOnClickListener {
-            val intent = Intent(this@Sewing, SixMonthCourses::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Sewing, SixMonthCourses::class.java))
+            finish() // Finish current activity
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Sewing, LifeSkills::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Sewing, LifeSkills::class.java))
+            finish() // Finish current activity
         }
-
     }
 }

@@ -29,27 +29,27 @@ class SixWeekCourses : AppCompatActivity() {
         val child = findViewById<ImageView>(R.id.childmindingImage)
         val garden = findViewById<ImageView>(R.id.gardeningImage)
         val cook = findViewById<ImageView>(R.id.cookingImage)
-        val index = arrayOf("Six month Courses", "Six week courses")
 
+        // Setup for Spinner menu
+        val index = arrayOf("Six month Courses", "Six week courses")
         val menu = findViewById<Spinner>(R.id.spinner2)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        menu.adapter = adapter // This line was missing an assignment
+        menu.adapter = adapter
 
+        // Listener for Spinner menu item selection
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            private var isFirstSelection = true  // Avoid triggering on initial setup
+
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> {
-                        // Go to Home screen
-                        val intent = Intent(this@SixWeekCourses, SixMonthCourses::class.java)
-                        startActivity(intent)
+                if (isFirstSelection) {
+                    isFirstSelection = false
+                } else {
+                    when (position) {
+                        0 -> startActivity(Intent(this@SixWeekCourses, SixMonthCourses::class.java))
+                        1 -> return // Already on SixWeekCourses, so no action needed
                     }
-                    1 -> {
-                        // Go to Six Month Courses screen
-                        val intent = Intent(this@SixWeekCourses, SixWeekCourses::class.java)
-                        startActivity(intent)
-                    }
-                    // No need for case 2 since it's already this activity
+                    finish() // Close current activity after navigation
                 }
             }
 
@@ -61,24 +61,24 @@ class SixWeekCourses : AppCompatActivity() {
         // Logo click to go back to the main screen
         val logo = findViewById<ImageView>(R.id.logo)
         logo.setOnClickListener {
-            val intent = Intent(this@SixWeekCourses, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixWeekCourses, Mainscreen::class.java))
+            finish()
         }
 
         // Course image click listeners
         child.setOnClickListener {
-            val intent = Intent(this@SixWeekCourses, Childminding::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixWeekCourses, Childminding::class.java))
+            finish()
         }
 
         garden.setOnClickListener {
-            val intent = Intent(this@SixWeekCourses, Garden_maintenance::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixWeekCourses, Garden_maintenance::class.java))
+            finish()
         }
 
         cook.setOnClickListener {
-            val intent = Intent(this@SixWeekCourses, Cooking::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixWeekCourses, Cooking::class.java))
+            finish()
         }
     }
 }

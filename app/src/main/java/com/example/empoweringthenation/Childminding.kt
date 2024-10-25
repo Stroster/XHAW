@@ -32,38 +32,38 @@ class Childminding : AppCompatActivity() {
         val next = findViewById<Button>(R.id.button12)
 
         // Initialize the Spinner menu
-        val index = arrayOf("Home", "Six month Courses", "Six week courses", "Cooking",
-            "Garden Maintenance")
+        val index = arrayOf("Home", "Six month Courses", "Six week courses", "Cooking", "Garden Maintenance")
         val menu = findViewById<Spinner>(R.id.spinner7)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        menu.adapter = adapter  // Set adapter to the spinner
+        menu.adapter = adapter
 
         // Set listener for item selection on Spinner
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            private var isFirstSelection = true  // Track initial selection to avoid auto-trigger
+
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // Navigate based on selected item
-                when (position) {
-                    0 -> {
-                        val intent = Intent(this@Childminding, Mainscreen::class.java)
-                        startActivity(intent)
+                if (isFirstSelection) {
+                    isFirstSelection = false  // Ignore first selection
+                } else {
+                    when (position) {
+                        0 -> {
+                            startActivity(Intent(this@Childminding, Mainscreen::class.java))
+                        }
+                        1 -> {
+                            startActivity(Intent(this@Childminding, SixMonthCourses::class.java))
+                        }
+                        2 -> {
+                            startActivity(Intent(this@Childminding, SixWeekCourses::class.java))
+                        }
+                        3 -> {
+                            startActivity(Intent(this@Childminding, Cooking::class.java))
+                        }
+                        4 -> {
+                            startActivity(Intent(this@Childminding, Garden_maintenance::class.java))
+                        }
                     }
-                    1 -> {
-                        val intent = Intent(this@Childminding, SixMonthCourses::class.java)
-                        startActivity(intent)
-                    }
-                    2 -> {
-                        val intent = Intent(this@Childminding, SixWeekCourses::class.java)
-                        startActivity(intent)
-                    }
-                    3 -> {
-                        val intent = Intent(this@Childminding, Cooking::class.java)
-                        startActivity(intent)
-                    }
-                    4 -> {
-                        val intent = Intent(this@Childminding, Garden_maintenance::class.java)
-                        startActivity(intent)
-                    }
+                    finish() // End current activity to prevent it from staying in the backstack
                 }
             }
 
@@ -74,18 +74,18 @@ class Childminding : AppCompatActivity() {
 
         // Set up button click listeners
         logo.setOnClickListener {
-            val intent = Intent(this@Childminding, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Childminding, Mainscreen::class.java))
+            finish()
         }
 
         back.setOnClickListener {
-            val intent = Intent(this@Childminding, SixWeekCourses::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Childminding, SixWeekCourses::class.java))
+            finish()
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Childminding, Garden_maintenance::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Childminding, Garden_maintenance::class.java))
+            finish()
         }
     }
 }

@@ -24,6 +24,8 @@ class CourseEnrollment : AppCompatActivity() {
     private val course2Price = 750.00
     private val selectedCourses = ArrayList<String>()
 
+    private var isFirstSelection = true // Flag to prevent initial selection trigger
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -63,10 +65,23 @@ class CourseEnrollment : AppCompatActivity() {
 
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> startActivity(Intent(this@CourseEnrollment, Mainscreen::class.java))
-                    1 -> startActivity(Intent(this@CourseEnrollment, SixMonthCourses::class.java))
-                    2 -> startActivity(Intent(this@CourseEnrollment, SixWeekCourses::class.java))
+                if (isFirstSelection) {
+                    isFirstSelection = false // Prevent action on the first selection
+                } else {
+                    when (position) {
+                        0 -> {
+                            startActivity(Intent(this@CourseEnrollment, Mainscreen::class.java))
+                            finish() // Finish current activity
+                        }
+                        1 -> {
+                            startActivity(Intent(this@CourseEnrollment, SixMonthCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                        2 -> {
+                            startActivity(Intent(this@CourseEnrollment, SixWeekCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                    }
                 }
             }
 
@@ -75,8 +90,8 @@ class CourseEnrollment : AppCompatActivity() {
 
         // Set logo click listener to go back to the main screen
         logo.setOnClickListener {
-            val intent = Intent(this@CourseEnrollment, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@CourseEnrollment, Mainscreen::class.java))
+            finish() // Finish current activity
         }
 
         // Checkbox listeners to update the total price and selected courses
@@ -141,6 +156,7 @@ class CourseEnrollment : AppCompatActivity() {
             intent.putStringArrayListExtra("selectedCourses", selectedCourses)
 
             startActivity(intent)
+            finish() // Finish current activity
         }
     }
 

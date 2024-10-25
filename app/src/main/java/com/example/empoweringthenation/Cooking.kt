@@ -38,15 +38,35 @@ class Cooking : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         menu.adapter = adapter
 
-        // Set listener for item selection on Spinner
+        // Prevent initial selection trigger on Spinner
+        var isFirstSelection = true
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> startActivity(Intent(this@Cooking, Mainscreen::class.java))
-                    1 -> startActivity(Intent(this@Cooking, SixMonthCourses::class.java))
-                    2 -> startActivity(Intent(this@Cooking, SixWeekCourses::class.java))
-                    3 -> startActivity(Intent(this@Cooking, Childminding::class.java))
-                    4 -> startActivity(Intent(this@Cooking, Garden_maintenance::class.java))
+                if (isFirstSelection) {
+                    isFirstSelection = false
+                } else {
+                    when (position) {
+                        0 -> {
+                            startActivity(Intent(this@Cooking, Mainscreen::class.java))
+                            finish()
+                        }
+                        1 -> {
+                            startActivity(Intent(this@Cooking, SixMonthCourses::class.java))
+                            finish()
+                        }
+                        2 -> {
+                            startActivity(Intent(this@Cooking, SixWeekCourses::class.java))
+                            finish()
+                        }
+                        3 -> {
+                            startActivity(Intent(this@Cooking, Childminding::class.java))
+                            finish()
+                        }
+                        4 -> {
+                            startActivity(Intent(this@Cooking, Garden_maintenance::class.java))
+                            finish()
+                        }
+                    }
                 }
             }
 
@@ -55,19 +75,22 @@ class Cooking : AppCompatActivity() {
             }
         }
 
-        // Logo click listener
+        // Logo click listener to navigate to main screen
         logo.setOnClickListener {
             startActivity(Intent(this@Cooking, Mainscreen::class.java))
+            finish()
         }
 
-        // Back button click listener
+        // Back button click listener to navigate to SixWeekCourses
         back.setOnClickListener {
             startActivity(Intent(this@Cooking, SixWeekCourses::class.java))
+            finish()
         }
 
-        // Enroll button click listener
+        // Enroll button click listener to navigate to CourseEnrollment
         enroll.setOnClickListener {
             startActivity(Intent(this@Cooking, CourseEnrollment::class.java))
+            finish()
         }
     }
 }

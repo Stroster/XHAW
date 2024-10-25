@@ -1,6 +1,8 @@
 package com.example.empoweringthenation
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,6 +12,7 @@ class ViewDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_details)
 
+        val logo = findViewById<ImageView>(R.id.imageView2)
         // Retrieve views
         val nameTextView = findViewById<TextView>(R.id.text_user_name)
         val phoneTextView = findViewById<TextView>(R.id.text_user_phone)
@@ -35,5 +38,10 @@ class ViewDetailsActivity : AppCompatActivity() {
         // Set the text for courses and total price
         coursesTextView.text = selectedCourses?.joinToString("\n") ?: "No courses selected."
         totalPriceTextView.text = String.format("Total Price: R%.2f", totalPrice)
+
+        logo.setOnClickListener {
+            val intent = Intent(this@ViewDetailsActivity, Mainscreen::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -21,18 +21,27 @@ class SixMonthCourses : AppCompatActivity() {
         val sewing = findViewById<ImageView>(R.id.imageView6)
         val life = findViewById<ImageView>(R.id.imageView7)
         val land = findViewById<ImageView>(R.id.imageView8)
+        val logo = findViewById<ImageView>(R.id.imageView3)
 
+        // Initialize and set up the Spinner
         val menu = findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         menu.adapter = adapter
 
+        // Spinner listener with initial selection check
+        var isFirstSelection = true
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    1 -> {  // Navigate to SixWeekCourses when "Six week courses" is selected
-                        val intent = Intent(this@SixMonthCourses, SixWeekCourses::class.java)
-                        startActivity(intent)
+                if (isFirstSelection) {
+                    isFirstSelection = false
+                } else {
+                    when (position) {
+                        1 -> {  // Navigate to SixWeekCourses when "Six week courses" is selected
+                            val intent = Intent(this@SixMonthCourses, SixWeekCourses::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
                     }
                 }
             }
@@ -43,31 +52,31 @@ class SixMonthCourses : AppCompatActivity() {
         }
 
         // Logo click to go back to the main screen
-        val logo = findViewById<ImageView>(R.id.imageView3)
         logo.setOnClickListener {
             val intent = Intent(this@SixMonthCourses, Mainscreen::class.java)
             startActivity(intent)
+            finish()
         }
 
         // Course image click listeners
         first.setOnClickListener {
-            val intent = Intent(this@SixMonthCourses, Firstaid::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixMonthCourses, Firstaid::class.java))
+            finish()
         }
 
         sewing.setOnClickListener {
-            val intent = Intent(this@SixMonthCourses, Sewing::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixMonthCourses, Sewing::class.java))
+            finish()
         }
 
         life.setOnClickListener {
-            val intent = Intent(this@SixMonthCourses, LifeSkills::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixMonthCourses, LifeSkills::class.java))
+            finish()
         }
 
         land.setOnClickListener {
-            val intent = Intent(this@SixMonthCourses, Landscaping::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SixMonthCourses, Landscaping::class.java))
+            finish()
         }
     }
 }

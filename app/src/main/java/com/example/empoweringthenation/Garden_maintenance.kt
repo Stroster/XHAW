@@ -14,10 +14,14 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Garden_maintenance : AppCompatActivity() {
+
+    private var isFirstTimeSelection = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_garden_maintenance)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -38,12 +42,17 @@ class Garden_maintenance : AppCompatActivity() {
         // Set listener for item selection on Spinner
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> startActivity(Intent(this@Garden_maintenance, Mainscreen::class.java))
-                    1 -> startActivity(Intent(this@Garden_maintenance, SixMonthCourses::class.java))
-                    2 -> startActivity(Intent(this@Garden_maintenance, SixWeekCourses::class.java))
-                    3 -> startActivity(Intent(this@Garden_maintenance, Childminding::class.java))
-                    4 -> startActivity(Intent(this@Garden_maintenance, Cooking::class.java))
+                if (isFirstTimeSelection) {
+                    isFirstTimeSelection = false  // Prevent initial auto-navigation
+                } else {
+                    // Handle navigation based on selection
+                    when (position) {
+                        0 -> startActivity(Intent(this@Garden_maintenance, Mainscreen::class.java))
+                        1 -> startActivity(Intent(this@Garden_maintenance, SixMonthCourses::class.java))
+                        2 -> startActivity(Intent(this@Garden_maintenance, SixWeekCourses::class.java))
+                        3 -> startActivity(Intent(this@Garden_maintenance, Childminding::class.java))
+                        4 -> startActivity(Intent(this@Garden_maintenance, Cooking::class.java))
+                    }
                 }
             }
 
@@ -52,19 +61,18 @@ class Garden_maintenance : AppCompatActivity() {
             }
         }
 
+        // Logo click to go back to the main screen
         logo.setOnClickListener {
-            val intent = Intent(this@Garden_maintenance, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Garden_maintenance, Mainscreen::class.java))
         }
 
+        // Back and Next button click listeners
         back.setOnClickListener {
-            val intent = Intent(this@Garden_maintenance, SixWeekCourses::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Garden_maintenance, SixWeekCourses::class.java))
         }
 
         next.setOnClickListener {
-            val intent = Intent(this@Garden_maintenance, Cooking::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@Garden_maintenance, Cooking::class.java))
         }
     }
 }
