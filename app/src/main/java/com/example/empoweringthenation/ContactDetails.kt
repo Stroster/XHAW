@@ -14,6 +14,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ContactDetails : AppCompatActivity() {
+    private var isFirstSelection = true // Flag to prevent initial selection trigger
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +31,7 @@ class ContactDetails : AppCompatActivity() {
         val menu = findViewById<Spinner>(R.id.spinner11)
 
         // Initialize and set up the dropdown menu (Spinner)
-        val index = arrayOf("Home", "Six month Courses", "Six week courses", )
+        val index = arrayOf("Home", "Six month Courses", "Six week courses")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         menu.adapter = adapter
@@ -37,10 +39,23 @@ class ContactDetails : AppCompatActivity() {
         // Set listener for item selection on Spinner
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    0 -> startActivity(Intent(this@ContactDetails, Mainscreen::class.java))
-                    1 -> startActivity(Intent(this@ContactDetails, SixMonthCourses::class.java))
-                    2 -> startActivity(Intent(this@ContactDetails, SixWeekCourses::class.java))
+                if (isFirstSelection) {
+                    isFirstSelection = false // Prevent action on the first selection
+                } else {
+                    when (position) {
+                        0 -> {
+                            startActivity(Intent(this@ContactDetails, Mainscreen::class.java))
+                            finish() // Finish current activity
+                        }
+                        1 -> {
+                            startActivity(Intent(this@ContactDetails, SixMonthCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                        2 -> {
+                            startActivity(Intent(this@ContactDetails, SixWeekCourses::class.java))
+                            finish() // Finish current activity
+                        }
+                    }
                 }
             }
 
@@ -50,13 +65,13 @@ class ContactDetails : AppCompatActivity() {
         }
 
         logo.setOnClickListener {
-            val intent = Intent(this@ContactDetails, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@ContactDetails, Mainscreen::class.java))
+            finish() // Finish current activity
         }
 
         back.setOnClickListener {
-            val intent = Intent(this@ContactDetails, Mainscreen::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@ContactDetails, Mainscreen::class.java))
+            finish() // Finish current activity
         }
     }
 }
