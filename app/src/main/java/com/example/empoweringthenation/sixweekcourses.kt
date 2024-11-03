@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
@@ -36,6 +37,8 @@ class SixWeekCourses : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, index)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         menu.adapter = adapter
+        val back = findViewById<Button>(R.id.button18)
+        val Enroll = findViewById<Button>(R.id.button20)
 
         // Listener for Spinner menu item selection
         menu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -78,6 +81,16 @@ class SixWeekCourses : AppCompatActivity() {
 
         cook.setOnClickListener {
             startActivity(Intent(this@SixWeekCourses, Cooking::class.java))
+            finish()
+        }
+
+        back.setOnClickListener {
+            startActivity(Intent(this@SixWeekCourses, Mainscreen::class.java))
+            finish()
+        }
+
+        Enroll.setOnClickListener {
+            startActivity(Intent(this@SixWeekCourses, CourseEnrollment::class.java))
             finish()
         }
     }

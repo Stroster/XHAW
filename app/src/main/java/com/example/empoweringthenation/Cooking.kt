@@ -29,7 +29,6 @@ class Cooking : AppCompatActivity() {
         // Retrieve UI elements
         val logo = findViewById<ImageView>(R.id.imageView21)
         val back = findViewById<Button>(R.id.button13)
-        val enroll = findViewById<Button>(R.id.button14)
         val menu = findViewById<Spinner>(R.id.spinner8)
 
         // Initialize and set up the dropdown menu (Spinner)
@@ -84,12 +83,6 @@ class Cooking : AppCompatActivity() {
         // Back button click listener to navigate to SixWeekCourses
         back.setOnClickListener {
             startActivity(Intent(this@Cooking, SixWeekCourses::class.java))
-            finish()
-        }
-
-        // Enroll button click listener to navigate to CourseEnrollment
-        enroll.setOnClickListener {
-            startActivity(Intent(this@Cooking, CourseEnrollment::class.java))
             finish()
         }
     }

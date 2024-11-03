@@ -24,58 +24,60 @@
         android:layout_width="355dp"
         android:layout_height="239dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="330dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/TextView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="125dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/sixweeks"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="121dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/View"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Courses.available" />
 
     <TextView
         android:id="@+id/Courses.available"
         android:layout_width="194dp"
         android:layout_height="37dp"
         android:layout_marginStart="108dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="29dp"
         android:text="@string/textView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Description" />
 
     <Button
         android:id="@+id/button22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/ContactUs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

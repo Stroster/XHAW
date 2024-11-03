@@ -14,9 +14,7 @@
         android:layout_width="135dp"
         android:layout_height="120dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="595dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/whatsapp_image_2024_09_15_at_01_16_04_030a1a51" />
@@ -35,58 +33,48 @@
         android:layout_width="260dp"
         android:layout_height="66dp"
         android:layout_marginStart="72dp"
-        android:layout_marginBottom="508dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/SixweekCooking"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21" />
 
     <ImageView
         android:id="@+id/imageView22"
         android:layout_width="205dp"
         android:layout_height="397dp"
         android:layout_marginStart="2dp"
-        android:layout_marginBottom="99dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
         app:srcCompat="@drawable/__4_png" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="188dp"
         android:layout_height="345dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="151dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Cooking1"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#4A5C6A"
         android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#4A5C6A"
-        android:text="@string/Enroll"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

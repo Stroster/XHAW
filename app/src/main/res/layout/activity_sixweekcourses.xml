@@ -99,6 +99,7 @@
             android:layout_width="135dp"
             android:layout_height="173dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/Cooking2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gardeningText"
             app:srcCompat="@drawable/__4_png" />
@@ -113,6 +114,30 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cookingImage" />
+
+        <Button
+            android:id="@+id/button18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#4A5C6A"
+            android:text="@string/Back"
+            app:layout_constraintEnd_toStartOf="@+id/button20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cookingText" />
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#4A5C6A"
+            android:text="@string/Enroll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cookingText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

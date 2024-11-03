@@ -32,7 +32,6 @@ class Landscaping : AppCompatActivity() {
         // Retrieve UI elements
         val logo = findViewById<ImageView>(R.id.imageView15)
         val back = findViewById<Button>(R.id.button7)
-        val next = findViewById<Button>(R.id.button8)
         val menu = findViewById<Spinner>(R.id.spinner5)
 
         // Initialize and set up the dropdown menu (Spinner)
@@ -72,10 +71,6 @@ class Landscaping : AppCompatActivity() {
         // Back and Next button click listeners
         back.setOnClickListener {
             startActivity(Intent(this@Landscaping, SixMonthCourses::class.java))
-        }
-
-        next.setOnClickListener {
-            startActivity(Intent(this@Landscaping, CourseEnrollment::class.java))
         }
     }
 }
