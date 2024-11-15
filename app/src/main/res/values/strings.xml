@@ -110,7 +110,7 @@ Content:
     <string name="name">Name and Surname</string>
     <string name="Phone">Phone Number</string>
     <string name="email">Email Address</string>
-    <string name="Adress">Address</string>
+    <string name="Adress">Address:</string>
     <string name="Course_Selection">Course Selection</string>
     <string name="courses">Courses</string>
     <string name="Course_selected">Courses Selected</string>
@@ -132,10 +132,11 @@ Content:
     <string name="ContactUs">Contact US</string>
     <string name="Email">Email: pradebe@gmail.com</string>
     <string name="Number">Number : 0213005222</string>
-    <string name="Address">Address: Atrium on 5th, 9th Floor, 5th Street, Sandton, Johannesburg, 2196,
-        South Africa
-    </string>
+    <string name="Address">Bloemfontein: 61 Second Avenue, Westdene, Bloemfontein 9301, South Africa</string>
+    <string name="Address1">Cape Town: 5 Silo Square, V&amp;A Waterfront, Cape Town 8002, South Africa</string>
+    <string name="Address2">Durban: 34 Richefond Circle, Ridgeside Office Park, Umhlanga Ridge, Durban 4319, South Africa</string>
     <string name="Exit">Exit</string>
     <string name="Map">Map</string>
     <string name="Logo">Logo</string>
+    <string name="Come">Please Contact Us should you have any enquires or visit any one of our 3 premises</string>
 </resources>
