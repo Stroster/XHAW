@@ -26,9 +26,9 @@ class ContactDetails : AppCompatActivity() {
             insets
         }
 
-        val logo = findViewById<ImageView>(R.id.imageView27)
-        val back = findViewById<Button>(R.id.button19)
-        val menu = findViewById<Spinner>(R.id.spinner11)
+        val logo = findViewById<ImageView>(R.id.imageViewLogo)
+        val back = findViewById<Button>(R.id.buttonBack)
+        val menu = findViewById<Spinner>(R.id.spinnerMenu)
 
         // Initialize and set up the dropdown menu (Spinner)
         val index = arrayOf("Home", "Six month Courses", "Six week courses")
