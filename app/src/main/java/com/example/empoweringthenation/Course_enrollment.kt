@@ -3,15 +3,9 @@ package com.example.empoweringthenation
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -23,7 +17,6 @@ class CourseEnrollment : AppCompatActivity() {
     private val course1Price = 1500.00
     private val course2Price = 750.00
     private val selectedCourses = ArrayList<String>()
-
     private var isFirstSelection = true // Flag to prevent initial selection trigger
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,7 +97,7 @@ class CourseEnrollment : AppCompatActivity() {
                     total -= coursePrice
                     selectedCourses.remove(courseName)
                 }
-                updateTotalWithVat(price)
+                updateTotalWithVatAndDiscount(price)
             }
         }
 
@@ -116,7 +109,7 @@ class CourseEnrollment : AppCompatActivity() {
         updateCheckbox(checkBox6, course2Price, "Cooking")
         updateCheckbox(checkBox7, course2Price, "Garden Maintenance")
 
-        // Confirm button listener to pass data to the next activity
+        // Confirm button listener to validate input and display the total with VAT and discount
         confirm.setOnClickListener {
             val name = nameInput.text.toString().trim()
             val phone = phoneInput.text.toString().trim()
@@ -143,26 +136,37 @@ class CourseEnrollment : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Calculate total with VAT
-            val totalWithVAT = total + (total * 0.15)
+            // Calculate total with VAT and discount
+            val totalWithVAT = calculateTotalWithDiscountAndVat()
 
-            // Pass data to the next activity
-            val intent = Intent(this@CourseEnrollment, ViewDetailsActivity::class.java)
-            intent.putExtra("name", name)
-            intent.putExtra("phone", phone)
-            intent.putExtra("email", email)
-            intent.putExtra("address", address)
-            intent.putExtra("totalPrice", totalWithVAT)
-            intent.putStringArrayListExtra("selectedCourses", selectedCourses)
-
-            startActivity(intent)
-            finish() // Finish current activity
+            // Display a success message using AlertDialog
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Application Successful")
+            builder.setMessage("Your application has been successfully submitted.\nTotal with VAT and discount: R%.2f".format(totalWithVAT))
+            builder.setPositiveButton("OK") { _, _ ->
+                // Navigate back to the home screen
+                startActivity(Intent(this@CourseEnrollment, Mainscreen::class.java))
+                finish() // Finish current activity to prevent returning back to this page
+            }
+            builder.show()
         }
     }
 
-    // Method to calculate and update total price with VAT
-    private fun updateTotalWithVat(priceTextView: TextView) {
-        val totalWithVat = total + (total * 0.15)
+    // Method to calculate and update total price with VAT and applicable discounts
+    private fun updateTotalWithVatAndDiscount(priceTextView: TextView) {
+        val totalWithVat = calculateTotalWithDiscountAndVat()
         priceTextView.text = String.format("Total: R%.2f", totalWithVat)
+    }
+
+    private fun calculateTotalWithDiscountAndVat(): Double {
+        val discount = when (selectedCourses.size) {
+            2 -> 0.05 // 5% discount for two courses
+            3 -> 0.10 // 10% discount for three courses
+            in 4..Int.MAX_VALUE -> 0.15
+            else -> 0.0
+        }
+
+        val discountedTotal = total - (total * discount)
+        return discountedTotal + (discountedTotal * 0.15) // Add VAT (15%)
     }
 }
