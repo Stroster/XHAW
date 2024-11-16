@@ -53,7 +53,6 @@ class LifeSkills : AppCompatActivity() {
                         3 -> startActivity(Intent(this@LifeSkills, Firstaid::class.java))
                         4 -> startActivity(Intent(this@LifeSkills, Sewing::class.java))
                         5 -> startActivity(Intent(this@LifeSkills, Landscaping::class.java))
-                        6 -> startActivity(Intent(this@LifeSkills, ViewDetailsActivity::class.java))
                     }
                     finish()  // Close this activity after navigation
                 }
