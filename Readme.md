@@ -1,6 +1,6 @@
 # How to Use the Empowering the Nation Mobile App
 
-# Link to youtube Video https://youtu.be/eFByVzSZOU8 
+# Link to youtube Video https://youtu.be/_lOW5vW4jbQ 
 
 This step-by-step guide will help you set up and use the **Empowering the Nation** mobile app, even if you are new to using Android applications.
 
